@@ -1,0 +1,26 @@
+diff --git a/test/sa_test/test_base.py b/test/sa_test/test_base.py
+index f91ce3e..d159b5c 100644
+--- a/test/sa_test/test_base.py
++++ b/test/sa_test/test_base.py
+@@ -110,6 +110,7 @@ class Test:
+         return result
+ 
+     def run_success(self, no_output=False):
++        print(self.command)
+         status, result = exec_command(self.command)
+         expected_output = ""
+         if status != 0:
+diff --git a/test/sa_test/util.py b/test/sa_test/util.py
+index f89c43d..e613e75 100644
+--- a/test/sa_test/util.py
++++ b/test/sa_test/util.py
+@@ -125,7 +125,8 @@ def get_all_idl_files(idl_path):
+ 
+ def get_idl():
+     current_path = os.path.dirname(os.path.abspath(__file__))
+-    relative_path = os.path.join(current_path, get_idl_name())
++    # relative_path = os.path.join(current_path, get_idl_name())
++    relative_path = os.path.join(current_path, "..", "..", "idl_tool_2", "idl-gen")
+     return os.path.realpath(relative_path)
+ 
+ 
