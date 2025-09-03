@@ -23,8 +23,10 @@ bounds_checking_function() {
 
 idl_tool
 bounds_checking_function
-make -C foundation/ability/idl_tool
+# make -C foundation/ability/idl_tool -j8 Q=
+make -C foundation/ability/idl_tool/idl_tool_2 -j8 Q=
 if [ ! -f idl-gen ] ; then
     ln -s foundation/ability/idl_tool .
-    ln -s foundation/ability/idl_tool/idl-gen . 
+    ln -s foundation/ability/idl_tool/idl_tool_2 .
+    ln -s foundation/ability/idl_tool/idl_tool_2/idl-gen .
 fi
